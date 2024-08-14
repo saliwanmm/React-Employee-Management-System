@@ -2,23 +2,28 @@ import { Component } from "react";
 
 import "./employees-add-form.css";
 
+// The component is responsible for adding new employees via a form
 class EmployeesAddForm extends Component {
     constructor(props) {
         super(props);
+        // Local state to save user-entered data (name and salary)
         this.state = {
-            name: "",
-            salary: ""
+            name: "",  // Field to store the name of the new employee
+            salary: ""  // Field for saving the salary of a new employee
         }
     }
 
+    // This method updates the corresponding fields in the state when the values ​​in the form change
     onValueChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
+    // The method handles the form submit event
     onSubmit = (e) => {
         e.preventDefault();
+        // Validation of user input fields
         if (this.state.name.length > 2 && this.state.salary) {
             this.props.onAdd(this.state.name, this.state.salary)
             this.setState({

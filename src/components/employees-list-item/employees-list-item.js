@@ -1,8 +1,10 @@
 import "./employees-list-item.css";
 
+// The component is responsible for displaying information about one employee
 const EmployeesListItem = (props) => {
     const { name, salary, onDelete, onToggleProp, increase, raise } = props;
 
+    // Add appropriate classes if the employee received a promotion or salary increase
     let classNames = "list-group-item d-flex justify-content-between";
     if (increase) {
         classNames += " increase";

@@ -1,5 +1,6 @@
 import "./app-info.css";
 
+// The component is responsible for displaying general information about employees
 const AppInfo = ({ employees, increased }) => {
     return (
         <div className="app-info">
